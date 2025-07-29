@@ -1,0 +1,19 @@
+<style>
+        /* Define custom colors and fonts using Tailwind's extend feature */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            html {
+                font-family: 'Inter', sans-serif;
+            }
+        }
+
+        /* Add a custom style for the hero section background image for the Programs page */
+        .programs-hero-background {
+            background-image: url('https://placehold.co/1920x400/154360/ffffff?text=Explore+Our+Programs'); /* Placeholder image for Programs */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>

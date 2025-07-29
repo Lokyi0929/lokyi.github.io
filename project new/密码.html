@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel=icon href=college.png type=image/jpg>
+    <link rel="stylesheet" href="password.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>University Student Login</h2>
+        <form action="#" method="POST"> <div class="input-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" placeholder="e.g., DCS1234567" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <div id="password-strength-indicator" class="strength-none">
+                    <div id="strength-bar"></div>
+                </div>
+                <p id="strength-feedback" class="feedback-text">Type your password</p>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

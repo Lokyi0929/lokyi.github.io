@@ -1,0 +1,59 @@
+<style>
+        /* Define custom colors and fonts using Tailwind's extend feature */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            html {
+                font-family: 'Inter', sans-serif;
+            }
+        }
+
+        /* Add a custom style for the hero section background image */
+        .hero-background {
+            background-image: url('https://placehold.co/1920x600/1e3a8a/ffffff?text=University+Campus'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mainNavigation = document.getElementById('main-navigation');
+
+            // Toggle the mobile navigation menu's visibility
+            mobileMenuButton.addEventListener('click', function() {
+                mainNavigation.classList.toggle('hidden');
+                mainNavigation.classList.toggle('flex'); // Add flex to make it a column layout for mobile
+                mainNavigation.classList.toggle('flex-col'); // Ensure column layout for mobile
+            });
+
+            // Close the mobile menu when a navigation link is clicked
+            const navLinks = mainNavigation.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Only hide if it's currently showing and on a mobile screen size
+                    if (window.innerWidth < 768 && !mainNavigation.classList.contains('hidden')) {
+                        mainNavigation.classList.add('hidden');
+                        mainNavigation.classList.remove('flex', 'flex-col');
+                    }
+                });
+            });
+
+            // Handle window resize to ensure correct menu state for desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) { // md breakpoint in Tailwind is 768px
+                    mainNavigation.classList.remove('hidden', 'flex', 'flex-col');
+                    mainNavigation.classList.add('md:block'); // Ensure desktop visibility
+                } else {
+                    mainNavigation.classList.add('hidden'); // Ensure mobile menu is hidden by default on resize
+                    mainNavigation.classList.remove('md:block');
+                }
+            });
+        });
+    </script>
+
+</head>
+
